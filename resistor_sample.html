@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style.css" rel="stylesheet">
+
+
+</head>
+<body>
+	<div class="cont header">
+<h2>Resistance Calculator</h2>
+
+</div>
+<div class="cont">
+	
+
+ 				<div class="taskadddiv">
+					<div class="tasklabel">
+					    <label >Select FirstBand:</label>
+					 </div>	
+					<div class="taskinput">
+						<select id="firstBand" class="taskcontrol">
+						<option >Black</option>
+						<option >Brown</option>
+						<option >Red</option>
+						<option >Orange</option>
+						<option >Yellow</option>
+						<option >Green</option>
+						<option >Blue</option>
+						<option >Violet</option>
+						<option >Gray</option>
+						<option >White</option>
+
+						</select>
+					</div>
+						<div style="clear:both;"></div>
+					<div class="tasklabel">
+					 <label>Select SecondBand:</label>
+					 </div>	
+					<div class="taskinput">
+					<select id="secondBand" class="taskcontrol">
+					<option >Black</option>
+					<option >Brown</option>
+					<option >Red</option>
+					<option >Orange</option>
+					<option >Yellow</option>
+					<option >Green</option>
+					<option >Blue</option>
+					<option >Violet</option>
+					<option >Gray</option>
+					<option >White</option>
+
+					</select>
+					</div>
+					<div style="clear:both;"></div>
+					<div class="tasklabel">
+					 <label>Select ThirdBand:</label>
+					 </div>	
+					<div class="taskinput">
+					<select id="thirdBand" class="taskcontrol">
+					<option >Black</option>
+					<option >Brown</option>
+					<option >Red</option>
+					<option >Orange</option>
+					<option >Yellow</option>
+					<option >Green</option>
+					<option >Blue</option>
+					<option >Violet</option>
+					<option >Gray</option>
+					<option >White</option>
+					<option >Gold</option>
+					<option >Silver</option>
+
+					</select>
+					</div>
+					<div style="clear:both;"></div>
+					<div class="tasklabel">
+					 <label>Select FourthBand:</label>
+					 </div>	
+					<div class="taskinput">
+					<select id="fourthBand" class="taskcontrol">
+					<option >Gold</option>
+					<option >Silver</option>
+					<option >None</option>
+					</select>
+					</div>
+					<div style="clear:both;"></div>	
+					<div class="tasklabel">
+
+					<button onclick="calculate()" class="taskbutton"> Calculate Resistance</button>
+
+
+					</div>
+					<div id="resitancedisplay" class="tasklabel" >
+					<label id="resistanceval"></label><label id="tolerance"></label>
+					</div>
+				</div>
+	
+</div>
+</body>
+
+<script src="src/resistancecalc.js"></script> 
+
+<script>
+
+var resistor ={
+	
+				"Black":{
+				  "value":"0",
+				   "tolerance":""
+				},
+				"Brown":{
+				  "value":"1",
+				   "tolerance":""
+				},
+				"Red":{
+				  "value":"2",
+				   "tolerance":""
+				},
+				"Orange":{
+				  "value":"3",
+				   "tolerance":""
+				},
+				"Yellow":{
+				  "value":"4",
+				   "tolerance":""
+				},
+				"Green":{
+				  "value":"5",
+				   "tolerance":""
+				},
+				"Blue":{
+				  "value":"6",
+				   "tolerance":""
+				},
+				"Violet":{
+				  "value":"7",
+				   "tolerance":""
+				},
+				"Gray":{
+				  "value":"8",
+				   "tolerance":""
+				},
+				"White":{
+				  "value":"9",
+				   "tolerance":""
+				},
+				"Gold":{
+				  "value":"-1",
+				   "tolerance":"5%"
+				},
+				"Silver":{
+				  "value":"-2",
+				   "tolerance":"10%"
+				},
+				"None":{
+				  "value":"",
+				   "tolerance":"20%"
+				}
+
+
+}
+
+	 function calculate(){
+
+	 	var firstBand= document.getElementById("firstBand").value;
+	 	var secondBand = document.getElementById("secondBand").value;
+	 	var thirdBand =document.getElementById("thirdBand").value;
+	 	var fourthBand =document.getElementById("fourthBand").value;
+
+	 	var resistance_value = resistanceCalculator(firstBand,secondBand,thirdBand,fourthBand);
+	 	document.getElementById("resistanceval").innerHTML = resistance_value;
+	 
+	 	document.getElementById('resitancedisplay').style.display = 'block';
+	 }
+   
+
+   window.onload = function() {
+
+	document.getElementById('resitancedisplay').style.display = 'none';
+	
+	}
+
+
+</script>
+</html>
+
+
